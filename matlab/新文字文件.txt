@@ -1,0 +1,15 @@
+format long
+
+A = [];
+X = [1,2,3,4,5];
+Z = [ones(5,1),X',1./X']
+B = [2.2;2.8;3.6;4.5;5.5];
+A =inv(Z'*Z)*Z'*B
+a = A(1)
+b = A(2)
+c = A(3)
+t = 0.1:0.1:6;
+plot(t,a+b.*t+c./t)
+hold on
+plot(X',B','o')
+hold on
